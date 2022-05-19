@@ -14,24 +14,25 @@
             <div class="col text-center link-light">
                 <h1 class="text-center">Lista de Atividades</h1>
                 <h3 class="text-center">Registro</h3>
-                <form action="" class="get">
-                    <input type="text" name="nome" 
+                <form action="" class="" method="POST">
+                    <input required type="text" name="nome" 
                     class="form-control" required
                     placeholder="Nome" id="">
-                    <input type="email" name="email"
+                    <input required type="email" name="email"
                     required class=form-control 
                     placeholder="Email" id="">
-                    <input type="password" name="senha"
+                    <input required type="password" name="senha"
                     required class="form-control"
-                    placeholder="Senha" id="">
-                    <input type="password" name="senha2"
+                    placeholder="Senha" id="senha">
+                    <input required type="password" name="senha2"
                     required class="form-control"
-                    placeholder="Confirme a Senha" id="">
+                    placeholder="Confirme a Senha" id="senha2">
                     <input type="submit" value="Entrar"
                     class="btn btn-primary">
                 </form>
             </div>
         </div>
     </div>
+    <script src="js/comparar.js"></script>
 </body>
 </html>
