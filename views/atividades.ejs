@@ -11,23 +11,31 @@
 <body>
     <div class="container">
         <h1 class="text-center">Lista de Atividades</h1>
+        <h2 class="text-center">%=nome%</h2>
         <div class="row">
             <div class="col">
                 <h3>Cadastro</h3>
                 <form action="" method="post" class="form-control">
-                    <input type="text" name="nome" id="" class="form-control" placeholder="Name">
-                    <input type="date" name="date" id="" class="form-control" placeholder="Date">
+                    <input type="hidden" name="id" value="<%=id%>>
+                    <label for="" class="form-control text-bg-secndary">titulo da atividade</label>
+                    <input type="text" name="nome" id="" class="form-control">
+                    <label for="" class="form-control text-bg-secndary">Data de entrega</label>
+                    <input type="date" name="date" id="" class="form-control">
+                    <label for="" class="form-control text-bg-secondary"> Tipo:</label>
                     <select name="tipo" id="" class="form-control">
+                        <option value="0">Selecione...</option>
                         <option value="0">Select:</option>
                         <option value="ac">AC</option>
                         <option value="at">AT</option>
                         <option value="rec">Rec</option>
                         <option value="exame">Exame</option>
                     </select>
+                    <input type="submit" value="Gravar"
+                    class="form-control btn btn-danger">
                 </form>
             </div>
             <div class="col">
-                <h3>Listar</h3>
+                <h3 class="text-center">Listar</h3>
             </div>
         </div>
     </div>

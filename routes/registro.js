@@ -21,7 +21,7 @@ module.exports=(app)=>{
         var senhasegura = await cript.hash(dados.senha,10)
 
     //gravar o dcoumento
-    var dcoumento =await new usuarios({
+    var documento =await new usuarios({
         nome:dados.nome,
         email:dados.dados,  
         senha:senhasegura
