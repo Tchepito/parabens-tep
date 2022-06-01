@@ -13,9 +13,12 @@ module.exports = (app)=>{
             entrega:dados.entrega,
             disciplinas:dados.disciplinas,
             instrucoes:dados.orientacoes,
-            usuarios:dados.id
+            usuarios:dados.id,
+            titulo:dados.titulo
         }).save()
+        //buscar as atividades do usuario 
+        var buscar = await atividades.find({usuario:dados.id})
         //recarregar a página de atividades 
-        res.render('atividades.ejs',{nome:dados.nome, id:dados.id})
+        res.render('atividades.ejs',{nome:dados.nome,id:dados.id,lista:buscar})
     })
 }
