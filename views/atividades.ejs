@@ -33,7 +33,7 @@
                     <label for="" class="form-control bg-secondary text-light border border-secondary"> Disciplina</label>
                     <select name="disciplina" id="" class="form-control">
                         <option value="0">Selecione...</option>
-                        <option value="0">Biologio</option>
+                        <option value="0">Biologia</option>
                         <option value="0">Linguagem de programação</option>
                         <option value="0">Internet web designer</option>
                         <option value="0">Matematica</option>
@@ -52,14 +52,15 @@
             <div class="col-sm">
                 <h3 class="text-center">Listar</h3>
                 <!--listagem das atividades dos usuarios-->
+                <% for (var n=0; n<lista.length; n++){%>
                 <div class="card">
-                    <div class="card-header">Data: <%=lista[0].data%></div>
+                    <div class="card-header">Data: <%=lista[n].data%></div>
                     <div class="card-body">
-                        <div class="card-title">Titulo</div>
-                        <div class="card-subtitle">Entrega</div>
-                        <div class="card subtitle">Disciplina</div>
-                        <div class="card-subtitle">Tipo</div>
-                        <div class="card-subtitle">Instruções</div>
+                        <div class="card-title">Titulo: <%=lista[n].titulo%></div>
+                        <div class="card-subtitle">Entrega: <%=lista[n].entrega%></div>
+                        <div class="card subtitle">Disciplina: <%=lista[n].disciplina%></div>
+                        <div class="card-subtitle">Tipo: <%=lista[n].tipo%></div>
+                        <div class="card-text">Instruções: <%=lista[n].instrucoes%></div>
                     </div>
                     <div class="card-footer">
                         <div class="input-group">
@@ -68,7 +69,7 @@
                                 <a href="#" class="btn btn-danger">Excluir</a>
                         </div>
                     </div>
-                </div>
+                </div><%}%>
             </div>
         </div>
     </div>

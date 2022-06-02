@@ -20,5 +20,6 @@ module.exports = (app)=>{
         var buscar = await atividades.find({usuario:dados.id})
         //recarregar a página de atividades 
         res.render('atividades.ejs',{nome:dados.nome,id:dados.id,lista:buscar})
+        module.exports = buscar
     })
 }
