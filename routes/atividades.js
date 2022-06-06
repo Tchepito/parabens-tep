@@ -1,5 +1,5 @@
 module.exports = (app)=>{
-    app.post('/atividades', async(req,res)=>{
+    app.post('/atividades', async(req, res)=>{
         var dados = req.body
         //return console.log(dados)
         //conectar com o database
@@ -16,10 +16,19 @@ module.exports = (app)=>{
             usuarios:dados.id,
             titulo:dados.titulo
         }).save()
-        //buscar as atividades do usuario 
-        var buscar = await atividades.find({usuario:dados.id})
+        
         //recarregar a página de atividades 
-        res.render('atividades.ejs',{nome:dados.nome,id:dados.id,lista:buscar})
-        module.exports = buscar
+        res.redirect('/atividades?id='+dados.id)
+    })
+    app.get('/atividades', async(req,res)=>{
+        var user = req.query.id
+        var usuarios = require('../models/usuarios')
+        var atividades = require('../models/atividades')
+
+        var dadosUser = await usuarios.findOne({_id:user})
+        var dadosAtividades = await atividades.find(
+        {usuarios:user})
+            
+        res.render('atividades.ejs',{nome:dadosUser.nome, id:dadosUser._id, lista:dadosAtividades})
     })
 }

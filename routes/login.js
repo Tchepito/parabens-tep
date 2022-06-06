@@ -1,4 +1,6 @@
+const atividades = require('../models/atividades')
 const buscar = require('../routes/atividades')
+
 
 module.exports = (app)=>{
 
@@ -14,7 +16,7 @@ module.exports = (app)=>{
         var usuarios = require('../models/usuarios')
         var verificar = await usuarios.findOne({email:dados.email})
         if(!verificar){
-        return res.send("invalid email")
+            return res.send("invalid email")
         }
         var cript = require('bcryptjs')
         var comparar = await cript.compare(dados.senha,verificar.senha)
@@ -24,7 +26,7 @@ module.exports = (app)=>{
 //buscar atividades do usuario 
             const atividades = require("../models/atividades")
             var buscar = await atividades.find({usuario:verificar._id})
-            res.render('atividades.ejs', {lista:buscar, nome:verificar.nome, id:verificar._id})
+            res.render('atividades.ejs', {nome:verificar.nome, id:verificar._id,lista:buscar})
 
         })   
     }  
